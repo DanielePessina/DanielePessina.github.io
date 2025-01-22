@@ -5,6 +5,12 @@ entries:
 
   ## Short bio
 
+  - title: About Me
+    url: /about
+
+  - title: e-mail
+    url: mailto:daniele.pessina18@imperial.ac.uk
+
   - title: Imperial Profile
     url: https://profiles.imperial.ac.uk/daniele.pessina18
 
