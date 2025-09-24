@@ -1,0 +1,33 @@
+<ul style="list-style-type: none; padding-left: 0;">
+    {%-for item in include.collection-%}
+      {%- if item.markdown -%}
+        {% capture markdown_content %}{% include_relative {{ item.markdown }} %}{% endcapture %}
+        {{ markdown_content | markdownify }}
+      {%- else -%}
+        <li>
+        {%- if item.image -%}
+          <img src="{{ item.image }}" {% if item.image_width %}width="{{ item.image_width }}"{% endif %} {% if item.image_height %}height="{{ item.image_height }}"{% endif %} alt="{{ item.title | default: 'Image' }}">
+        {%- elsif item.url -%}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {%- else -%}
+          {{ item.title }}
+        {%- endif -%}
+        </li>
+      {%- endif -%}
+
+      {%-if item.post_list-%}
+        {%-
+          include post_list.html
+            category=item.post_list.category
+            limit=item.post_list.limit
+            show_more=item.post_list.show_more
+            show_more_text=item.post_list.show_more_text
+            show_more_url=item.post_list.show_more_url
+       -%}
+      {%-endif-%}
+
+      {%-if item.entries-%}
+        {%-include menu_item.html collection=item.entries-%}
+      {%-endif-%}
+    {%-endfor-%}
+  </ul>
