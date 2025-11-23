@@ -25,6 +25,11 @@ Check out my publications:
 
 - Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025) [Machine learning-enhanced Sensitivity Analysis for Complex Pharmaceutical Systems](https://doi.org/10.69997/sct.133428)
 
+And check out some of my code:
+
+- [CriSTool - the Crystallisation In-Silico Toolbox in Julia](https://github.com/DanielePessina/CriSTool---Crystallisation-In-Silico-Toolbox) CriSTool is a Julia toolbox for simulating crystallisation population balance models, estimating kinetics from data, and exploring uncertainty and sensitivity.
+- [Crystalline - Neural ODEs for Transfer Learning of Crystallisation Processes](https://github.com/DanielePessina/Crystalline---Neural-ODEs-for-Transfer-Learning-of-Crystallisation-Processes) Research code for training Augmented Neural ODE (AugNODE) models on crystallisation kinetics using JAX, Equinox, and Diffrax. The package includes training utilities for fresh and transfer‑learned AugNODEs plus a Dash dashboard to launch runs and inspect plots interactively.
+
 # Get in touch:
 
 [e-mail](mailto:daniele.pessina18@imperial.ac.uk)
