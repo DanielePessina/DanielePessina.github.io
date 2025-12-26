@@ -1,6 +1,6 @@
 # About Me
 
-<div class="hero-bio">
+<div class="hero-bio" markdown="1">
 
 I am a final year PhD student at the [Sargent Centre for Process Systems Engineering](https://www.imperial.ac.uk/process-systems-engineering/) in the Department of Chemical Engineering at Imperial. I am supervised by [Dr. Maria Papathanasiou](https://www.papathanlab.com/) and [Prof Jerry Heng](https://profiles.imperial.ac.uk/jerry.heng/), and my PhD is funded through a CASE studentship with AstraZeneca.
 
@@ -23,7 +23,7 @@ I also work on integrating smart machine learning methods for efficient pharmaco
 
 ## Publications
 
-<div class="publication-card">
+<div class="publication-card" markdown="1">
 
 **Transfer Learning Assessment of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations**
 Pessina D.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
@@ -31,7 +31,7 @@ Pessina D.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
 
 </div>
 
-<div class="publication-card">
+<div class="publication-card" markdown="1">
 
 **Integrated In Vitro/In Silico Uncertainty Quantification Method for Protein Crystallization Models**
 Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
@@ -39,7 +39,7 @@ Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Heng, J. Y. Y.; Papathanasiou,
 
 </div>
 
-<div class="publication-card">
+<div class="publication-card" markdown="1">
 
 **Model-based approach to template-induced macromolecule crystallisation**
 Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
@@ -47,7 +47,7 @@ Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Tian, T.; Watson, O.; Heng, J.
 
 </div>
 
-<div class="publication-card">
+<div class="publication-card" markdown="1">
 
 **Machine learning-enhanced Sensitivity Analysis for Complex Pharmaceutical Systems**
 Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
@@ -59,7 +59,7 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 
 ## Open Source Projects
 
-<div class="repo-card">
+<div class="repo-card" markdown="1">
 
 ### 🔬 CriSTool – Crystallisation In-Silico Toolbox
 A Julia toolbox for simulating crystallisation population balance models, estimating kinetics from data, and exploring uncertainty and sensitivity.
@@ -67,7 +67,7 @@ A Julia toolbox for simulating crystallisation population balance models, estima
 
 </div>
 
-<div class="repo-card">
+<div class="repo-card" markdown="1">
 
 ### 🧪 Crystalline – Neural ODEs for Transfer Learning
 Research code for training Augmented Neural ODE (AugNODE) models on crystallisation kinetics using JAX, Equinox, and Diffrax. Includes a Dash dashboard for interactive runs and plots.
@@ -79,7 +79,7 @@ Research code for training Augmented Neural ODE (AugNODE) models on crystallisat
 
 ## Get in Touch
 
-<div class="contact-bar">
+<div class="contact-bar" markdown="1">
 
 [📧 Email](mailto:daniele.pessina18@imperial.ac.uk)
 [🎓 Imperial Profile](https://profiles.imperial.ac.uk/daniele.pessina18)
