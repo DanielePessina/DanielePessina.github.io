@@ -56,7 +56,7 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 </div>
 
 ---
-
+<!--
 ## Open Source Projects
 
 <div class="repo-card" markdown="1">
@@ -75,7 +75,7 @@ Research code for training Augmented Neural ODE (AugNODE) models on crystallisat
 
 </div>
 
----
+--- -->
 
 ## Get in Touch
 
