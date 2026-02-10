@@ -56,26 +56,7 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 </div>
 
 ---
-<!--
-## Open Source Projects
 
-<div class="repo-card" markdown="1">
-
-### 🔬 CriSTool – Crystallisation In-Silico Toolbox
-A Julia toolbox for simulating crystallisation population balance models, estimating kinetics from data, and exploring uncertainty and sensitivity.
-[⭐ View on GitHub →](https://github.com/DanielePessina/CriSTool---Crystallisation-In-Silico-Toolbox)
-
-</div>
-
-<div class="repo-card" markdown="1">
-
-### 🧪 Crystalline – Neural ODEs for Transfer Learning
-Research code for training Augmented Neural ODE (AugNODE) models on crystallisation kinetics using JAX, Equinox, and Diffrax. Includes a Dash dashboard for interactive runs and plots.
-[⭐ View on GitHub →](https://github.com/DanielePessina/Crystalline---Neural-ODEs-for-Transfer-Learning-of-Crystallisation-Processes)
-
-</div>
-
---- -->
 
 ## Get in Touch
 
