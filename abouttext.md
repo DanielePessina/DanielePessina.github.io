@@ -25,9 +25,9 @@ I also work on integrating smart machine learning methods for efficient pharmaco
 
 <div class="publication-card" markdown="1">
 
-**Transfer Learning Assessment of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations**
-Pessina D.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
-[📄 Read on bioRxiv →](https://www.biorxiv.org/content/10.1101/2025.09.22.677735v1)
+**Transfer Learning of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations**
+Pessina D.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2026)
+[📄 Read in Dig. Chem. Eng. →](https://www.sciencedirect.com/science/article/pii/S2772508126000050)
 
 </div>
 
