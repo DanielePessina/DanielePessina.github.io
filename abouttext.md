@@ -39,6 +39,16 @@ Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Heng, J. Y. Y.; Papathanasiou,
 
 </div>
 
+
+<div class="publication-card" markdown="1">
+
+**Biomolecular Crystallisation Through Soft Templates and Seeding**
+Heng, J. et al. (2026)
+[📄 Read in Advances in Biochemical Engineering/Biotechnology →](https://doi.org/10.1007/10_2025_310)
+
+</div>
+
+
 <div class="publication-card" markdown="1">
 
 **Model-based approach to template-induced macromolecule crystallisation**
@@ -56,6 +66,28 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 </div>
 
 ---
+
+## Code
+
+<div class="publication-card" markdown="1">
+
+**CriSTool - Julia-based Population Balance Modelling, Uncertainty Quantification and Sensitivity Analysis**
+[📄 Github](https://github.com/DanielePessina/CriSTool---Crystallisation-In-Silico-Toolbox)
+
+</div>
+
+
+<div class="publication-card" markdown="1">
+
+**GSAX - JAX-based Global Sensitivity Analysis for large models**
+[📄 Github](https://danielepessina.github.io/gsax/)
+
+</div>
+
+
+---
+
+
 
 
 ## Get in Touch
