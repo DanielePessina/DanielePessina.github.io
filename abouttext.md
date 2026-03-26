@@ -26,15 +26,22 @@ I also work on integrating smart machine learning methods for efficient pharmaco
 <div class="publication-card" markdown="1">
 
 **Transfer Learning of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations**
-Pessina D.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2026)
+
+**Pessina D**.; Tian T.; Watson O.; Heng J. Y. Y.; Papathanasiou M. M. (2026)
+
 [📄 Read in Dig. Chem. Eng. →](https://www.sciencedirect.com/science/article/pii/S2772508126000050)
+
+</div>
+
 
 </div>
 
 <div class="publication-card" markdown="1">
 
 **Integrated In Vitro/In Silico Uncertainty Quantification Method for Protein Crystallization Models**
-Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
+
+**Pessina D.**; Calderon De Anda J.; Heffernan C.; Heng J. Y. Y.; Papathanasiou M. M. (2025)
+
 [📄 Read in I&EC Research →](https://doi.org/10.1021/acs.iecr.4c04517)
 
 </div>
@@ -43,7 +50,9 @@ Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Heng, J. Y. Y.; Papathanasiou,
 <div class="publication-card" markdown="1">
 
 **Biomolecular Crystallisation Through Soft Templates and Seeding**
-Heng, J. et al. (2026)
+
+Heng J.; Verma V.; Mitchell H.; **Pessina D.** (2026)
+
 [📄 Read in Advances in Biochemical Engineering/Biotechnology →](https://doi.org/10.1007/10_2025_310)
 
 </div>
@@ -52,7 +61,9 @@ Heng, J. et al. (2026)
 <div class="publication-card" markdown="1">
 
 **Model-based approach to template-induced macromolecule crystallisation**
-Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Tian, T.; Watson, O.; Heng, J. Y. Y.; Papathanasiou, M. M. (2025)
+
+**Pessina D.**; Calderon De Anda J.; Heffernan C.; Tian T.; Watson O.; Heng J. Y. Y.; Papathanasiou M. M. (2025)
+
 [📄 Read Paper →](https://doi.org/10.69997/sct.131246)
 
 </div>
@@ -60,7 +71,9 @@ Pessina, D.; Calderon De Anda, J.; Heffernan, C.; Tian, T.; Watson, O.; Heng, J.
 <div class="publication-card" markdown="1">
 
 **Machine learning-enhanced Sensitivity Analysis for Complex Pharmaceutical Systems**
-Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
+
+**Pessina D.**; Abbiati R. A.; Manca D.; Papathanasiou M. M. (2025)
+
 [📄 Read Paper →](https://doi.org/10.69997/sct.133428)
 
 </div>
@@ -72,6 +85,7 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 <div class="publication-card" markdown="1">
 
 **CriSTool - Julia-based Population Balance Modelling, Uncertainty Quantification and Sensitivity Analysis**
+
 [📄 Github](https://github.com/DanielePessina/CriSTool---Crystallisation-In-Silico-Toolbox)
 
 </div>
@@ -80,6 +94,7 @@ Pessina, D.; Abbiati, R. A.; Manca, D.; Papathanasiou, M. M. (2025)
 <div class="publication-card" markdown="1">
 
 **GSAX - JAX-based Global Sensitivity Analysis for large models**
+
 [📄 Github](https://danielepessina.github.io/gsax/)
 
 </div>
