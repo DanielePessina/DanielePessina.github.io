@@ -80,28 +80,6 @@ Heng J.; Verma V.; Mitchell H.; **Pessina D.** (2026)
 
 ---
 
-## Code
-
-<div class="publication-card" markdown="1">
-
-**CriSTool - Julia-based Population Balance Modelling, Uncertainty Quantification and Sensitivity Analysis**
-
-[📄 Github](https://github.com/DanielePessina/CriSTool---Crystallisation-In-Silico-Toolbox)
-
-</div>
-
-
-<div class="publication-card" markdown="1">
-
-**GSAX - JAX-based Global Sensitivity Analysis for large models**
-
-[📄 Github](https://danielepessina.github.io/gsax/)
-
-</div>
-
-
----
-
 
 
 
