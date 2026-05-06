@@ -34,8 +34,6 @@ I also work on integrating smart machine learning methods for efficient pharmaco
 </div>
 
 
-</div>
-
 <div class="publication-card" markdown="1">
 
 **Integrated In Vitro/In Silico Uncertainty Quantification Method for Protein Crystallization Models**
