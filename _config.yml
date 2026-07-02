@@ -4,7 +4,7 @@ email: danielepessina99@gmail.com # email of site's author
 url: https://danielepessina.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
-  My personal website
+  Daniele Pessina — modeling scientist working on differentiable, uncertainty-aware models for drug safety and biology at Deep Origin, alongside a PhD at Imperial College London.
 
 # permalink: /:slug.html
 

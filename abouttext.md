@@ -2,9 +2,11 @@
 
 <div class="hero-bio" markdown="1">
 
-I am a final year PhD student at the [Sargent Centre for Process Systems Engineering](https://www.imperial.ac.uk/process-systems-engineering/) in the Department of Chemical Engineering at Imperial. I am supervised by [Dr. Maria Papathanasiou](https://www.papathanlab.com/) and [Prof Jerry Heng](https://profiles.imperial.ac.uk/jerry.heng/), and my PhD is funded through a CASE studentship with AstraZeneca.
+I am a Modeling & Optimization Scientist at Deep Origin, where I build models that predict how drugs behave in the human body and when they become toxic. The work combines mechanistic simulation of physiology with machine learning, as part of the ARPA-H CATALYST program (PREDICTS consortium), and aims to make drug-safety prediction reliable enough to reduce animal testing.
 
-My research is focused on template-induced biomolecule crystallisation modelling and process design. I work at the interface of process systems engineering, machine learning, and computational modelling — developing tools to quantify uncertainty, guide experimental design, and accelerate crystallisation process development.
+Alongside that, I am finishing my PhD at the [Sargent Centre for Process Systems Engineering](https://www.imperial.ac.uk/process-systems-engineering/) in the Department of Chemical Engineering at Imperial, supervised by [Dr. Maria Papathanasiou](https://www.papathanlab.com/) and [Prof Jerry Heng](https://profiles.imperial.ac.uk/jerry.heng/) and funded through a CASE studentship with AstraZeneca.
+
+My doctoral research is focused on template-induced biomolecule crystallisation modelling and process design. I work at the interface of process systems engineering, machine learning, and computational modelling — developing tools to quantify uncertainty, guide experimental design, and accelerate crystallisation process development.
 
 I also work on integrating smart machine learning methods for efficient pharmacokinetic modelling, and have explored data-driven high-dimensional time-series monitoring methods for real-time quality assurance in manufacturing.
 
