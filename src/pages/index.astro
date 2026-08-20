@@ -134,6 +134,7 @@ const publications = [
 
 	<section class="mt-16" id="now">
 		<h2 class="title mb-6 text-xl">Now</h2>
+		<div class="card border-l-4 border-l-accent">
 		<h3 class="font-semibold">Virtual patients &amp; in-silico clinical trials</h3>
 		<p class="text-muted mb-3 text-xs">Cell Sims team · ARPA-H CATALYST program · PREDICTS consortium · Deep Origin</p>
 		<p class="mb-3">
@@ -147,6 +148,7 @@ const publications = [
 			end to end, it can be stress-tested under uncertainty and reduced to the mechanisms that drive the
 			output, which makes it usable for experiment design and in-silico decisions.
 		</p>
+		</div>
 	</section>
 
 	<section class="mt-16" id="photos">
@@ -156,10 +158,10 @@ const publications = [
 
 	<section class="mt-16" id="experience">
 		<h2 class="title mb-6 text-xl">Experience</h2>
-		<ul class="space-y-7" role="list">
+		<ul class="space-y-4" role="list">
 			{
 				experience.map((job) => (
-					<li class="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
+					<li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
 						<span class="text-muted text-xs sm:pt-0.5">{job.when}</span>
 						<div>
 							<h3 class="font-semibold">
@@ -204,7 +206,7 @@ const publications = [
 
 	<section class="mt-16" id="open-source">
 		<h2 class="title mb-6 text-xl">Open source</h2>
-		<p>
+		<p class="card">
 			<a class="cactus-link font-semibold" href="https://danielepessina.github.io/jaxgsa/">jaxgsa</a>
 			<span class="text-muted"> · </span>
 			JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
@@ -214,10 +216,10 @@ const publications = [
 
 	<section class="mt-16" id="publications">
 		<h2 class="title mb-6 text-xl">Selected publications</h2>
-		<ul class="space-y-5" role="list">
+		<ul class="space-y-3" role="list">
 			{
 				publications.map((p) => (
-					<li>
+					<li class="card py-4">
 						<a class="cactus-link font-semibold" href={p.url} rel="noreferrer" target="_blank">
 							{p.title}
 						</a>

@@ -15,7 +15,7 @@ const socialLinks: { friendlyName: string; link: string; name: string; external?
 		socialLinks.map(({ friendlyName, link, name, external }) => (
 			<li class="flex">
 				<a
-					class="hover:border-link hover:text-link inline-flex items-center gap-x-1.5 rounded-sm border border-muted/40 px-2.5 py-1 text-xs font-semibold"
+					class="hover:border-link hover:text-link inline-flex items-center gap-x-1.5 rounded-sm border border-muted/40 bg-surface px-2.5 py-1 text-xs font-semibold shadow-xs"
 					href={link}
 					rel={external ? "noreferrer" : undefined}
 					target={external ? "_blank" : undefined}
