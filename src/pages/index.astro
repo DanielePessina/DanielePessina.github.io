@@ -1,0 +1,243 @@
+---
+import PhotoStrip from "@/components/PhotoStrip.astro";
+import SocialList from "@/components/SocialList.astro";
+import PageLayout from "@/layouts/Base.astro";
+
+const experience = [
+	{
+		role: "Modeling & Optimization Scientist",
+		org: "Deep Origin",
+		where: "Cell Sims team · ARPA-H CATALYST · PREDICTS consortium",
+		when: "2026 – now",
+		points: [
+			"Differentiable pipelines that predict patient-level drug toxicity from mechanistic physiology plus ML layers.",
+			"Turning legacy scientific solvers (ODE engines, SBML, optimisers, agent-based models) into trainable PyTorch components.",
+		],
+	},
+	{
+		role: "PhD Researcher, Process Systems Engineering",
+		org: "Imperial College London",
+		where: "Sargent Centre · CASE studentship with AstraZeneca · applied to pharmacokinetics and protein crystallisation",
+		when: "2022 – now",
+		points: [
+			"Developed mechanistic ODE/PDE simulators, hybrid mechanistic-ML and pure ML models of dynamic systems from sparse, noisy time series.",
+			"Uncertainty quantification and identifiability methods for pharmacokinetic and process models: profile likelihood and Bayesian inference (MCMC, variational inference, ABC).",
+			"Methods and open-source implementations for fast global sensitivity analysis and model-based design of experiments.",
+			"Closed-loop in-vitro / in-silico work: I was in the lab running the experiments, built the models on that data, and fed the analysis back into experimental and process design.",
+		],
+	},
+	{
+		role: "Data Scientist Intern",
+		org: "Quaisr",
+		where: "London",
+		when: "2026",
+		points: ["Agentic LLM workflows for regulated pharma process development."],
+	},
+	{
+		role: "Consultant Data Scientist",
+		org: "Haleon",
+		where: "",
+		when: "2025",
+		points: [
+			"ML soft-sensors reading product quality in real time to within 10% of lab reference, enough to retire up to half of offline QA.",
+		],
+	},
+];
+
+const education = [
+	{ degree: "PhD, Chemical Engineering", org: "Imperial College London", when: "2022 – now" },
+	{ degree: "MEng, Chemical Engineering, 1st Class Honours", org: "Imperial College London", when: "2018 – 2022" },
+];
+
+const publications = [
+	{
+		title: "Transfer Learning of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations",
+		authors: "Pessina D.; Tian T.; Watson O.; Heng J. Y. Y.; Papathanasiou M. M.",
+		venue: "Digital Chemical Engineering",
+		year: "2026",
+		badge: "Editors' Choice",
+		url: "https://www.sciencedirect.com/science/article/pii/S2772508126000050",
+	},
+	{
+		title: "An in silico / in vitro approach for uncertainty-aware hybrid models for template-induced protein crystallisation systems",
+		authors: "Pessina D.; Calderon De Anda J.; Heffernan C.; Heng J. Y. Y.; Papathanasiou M. M.",
+		venue: "Systems & Control Transactions",
+		year: "2026",
+		url: "https://doi.org/10.69997/sct.103037",
+	},
+	{
+		title: "Biomolecular Crystallisation Through Soft Templates and Seeding",
+		authors: "Heng J.; Verma V.; Mitchell H.; Pessina D.",
+		venue: "Advances in Biochemical Engineering / Biotechnology",
+		year: "2026",
+		url: "https://doi.org/10.1007/10_2025_310",
+	},
+	{
+		title: "Model-based approach to template-induced macromolecule crystallisation",
+		authors: "Pessina D.; Calderon De Anda J.; Heffernan C.; Tian T.; Watson O.; Heng J. Y. Y.; Papathanasiou M. M.",
+		venue: "Systems & Control Transactions",
+		year: "2025",
+		url: "https://doi.org/10.69997/sct.131246",
+	},
+	{
+		title: "Machine learning-enhanced Sensitivity Analysis for Complex Pharmaceutical Systems",
+		authors: "Pessina D.; Abbiati R. A.; Manca D.; Papathanasiou M. M.",
+		venue: "Systems & Control Transactions",
+		year: "2025",
+		url: "https://doi.org/10.69997/sct.133428",
+	},
+	{
+		title: "Integrated In Vitro / In Silico Uncertainty Quantification Method for Protein Crystallization Models",
+		authors: "Pessina D.; Calderon De Anda J.; Heffernan C.; Heng J. Y. Y.; Papathanasiou M. M.",
+		venue: "Industrial & Engineering Chemistry Research",
+		year: "2025",
+		url: "https://doi.org/10.1021/acs.iecr.4c04517",
+	},
+	{
+		title: "Mammalian cell growth characterisation by a non-invasive plate reader assay",
+		authors: "Grob A. et al. (incl. Pessina D.)",
+		venue: "Nature Communications",
+		year: "2024",
+		url: "https://doi.org/10.1038/s41467-023-44396-4",
+	},
+];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section class="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+		<img
+			alt="Daniele Pessina"
+			class="h-32 w-26 shrink-0 rounded-sm object-cover"
+			height="128"
+			src="/profile.jpeg"
+			width="104"
+		/>
+		<div class="min-w-0">
+			<h1 class="title mb-1">Daniele Pessina</h1>
+			<p class="mb-1">
+				Modeling &amp; Optimization Scientist <span class="text-accent">· Deep Origin</span>
+			</p>
+			<p class="text-muted mb-5 text-xs">
+				Full-stack ML &amp; differentiable simulation · mechanistic + ML orchestration · virtual patients
+			</p>
+			<SocialList />
+		</div>
+	</section>
+
+	<section class="mt-12">
+		<p>
+			I build modelling software for virtual patients and toxicology prediction. Mechanistic simulators,
+			machine learning and biological data, wired into one differentiable system that trains end to end
+			and runs in production.
+		</p>
+	</section>
+
+	<section class="mt-16" id="now">
+		<h2 class="title mb-6 text-xl">Now</h2>
+		<h3 class="font-semibold">Virtual patients &amp; in-silico clinical trials</h3>
+		<p class="text-muted mb-3 text-xs">Cell Sims team · ARPA-H CATALYST program · PREDICTS consortium · Deep Origin</p>
+		<p class="mb-3">
+			I build the software behind virtual patients: multiscale models of human physiology coupled to ML
+			layers, calibrated against heterogeneous data and exposed as workflows scientists can query.
+		</p>
+		<p>
+			Much of it is making legacy scientific code behave like modern ML code. I wrap C++ ODE engines,
+			SBML models, optimisation solvers and agent-based simulations as differentiable PyTorch components,
+			then build the gradient backends, surrogates and analysis tools around them. Once a model trains
+			end to end, it can be stress-tested under uncertainty and reduced to the mechanisms that drive the
+			output, which makes it usable for experiment design and in-silico decisions.
+		</p>
+	</section>
+
+	<section class="mt-16" id="photos">
+		<h2 class="title mb-6 text-xl">I also take photos</h2>
+		<PhotoStrip />
+	</section>
+
+	<section class="mt-16" id="experience">
+		<h2 class="title mb-6 text-xl">Experience</h2>
+		<ul class="space-y-7" role="list">
+			{
+				experience.map((job) => (
+					<li class="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
+						<span class="text-muted text-xs sm:pt-0.5">{job.when}</span>
+						<div>
+							<h3 class="font-semibold">
+								{job.role} <span class="text-accent">· {job.org}</span>
+							</h3>
+							{job.where && <p class="text-muted mb-2 text-xs">{job.where}</p>}
+							<ul class="list-disc space-y-1 ps-4 marker:text-muted" role="list">
+								{job.points.map((pt) => (
+									<li>{pt}</li>
+								))}
+							</ul>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="mt-16" id="education">
+		<h2 class="title mb-6 text-xl">Education</h2>
+		<ul class="space-y-3" role="list">
+			{
+				education.map((e) => (
+					<li class="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
+						<span class="text-muted text-xs sm:pt-0.5">{e.when}</span>
+						<div>
+							<span class="font-semibold">{e.degree}</span>
+							<span class="text-muted"> · {e.org}</span>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+		<p class="mt-5">
+			Thesis: a hybrid in-silico / in-vitro approach to the design and optimisation of large-molecule
+			crystallisation, supervised by{" "}
+			<a class="cactus-link" href="https://www.papathanlab.com/">Maria Papathanasiou</a> and{" "}
+			<a class="cactus-link" href="https://profiles.imperial.ac.uk/jerry.heng/">Jerry Heng</a> at the{" "}
+			<a class="cactus-link" href="https://www.imperial.ac.uk/process-systems-engineering/">Sargent Centre</a>.
+		</p>
+	</section>
+
+	<section class="mt-16" id="open-source">
+		<h2 class="title mb-6 text-xl">Open source</h2>
+		<p>
+			<a class="cactus-link font-semibold" href="https://danielepessina.github.io/jaxgsa/">jaxgsa</a>
+			<span class="text-muted"> · </span>
+			JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
+			hundreds of times faster than SALib on multi-output workloads.
+		</p>
+	</section>
+
+	<section class="mt-16" id="publications">
+		<h2 class="title mb-6 text-xl">Selected publications</h2>
+		<ul class="space-y-5" role="list">
+			{
+				publications.map((p) => (
+					<li>
+						<a class="cactus-link font-semibold" href={p.url} rel="noreferrer" target="_blank">
+							{p.title}
+						</a>
+						<p class="text-muted mt-0.5 text-xs">{p.authors}</p>
+						<p class="text-muted text-xs">
+							<i>{p.venue}</i> · <span class="text-accent font-semibold">{p.year}</span>
+							{p.badge && <span class="ms-2 rounded-sm border border-accent px-1.5 py-px text-accent">{p.badge}</span>}
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="mt-16" id="contact">
+		<h2 class="title mb-6 text-xl">Contact</h2>
+		<p class="mb-4">
+			Based in London. Happiest talking about differentiable simulation, hybrid modelling and making
+			scientific code trainable.
+		</p>
+		<SocialList />
+	</section>
+</PageLayout>

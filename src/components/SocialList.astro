@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialLinks: { friendlyName: string; link: string; name: string; external?: boolean }[] = [
+	{ friendlyName: "Email", link: "mailto:danielepessina99@gmail.com", name: "mdi:email-outline" },
+	{ friendlyName: "Scholar", link: "https://scholar.google.com/citations?user=3cpreYwAAAAJ&hl=en", name: "mdi:school-outline", external: true },
+	{ friendlyName: "GitHub", link: "https://github.com/DanielePessina", name: "mdi:github", external: true },
+	{ friendlyName: "LinkedIn", link: "https://www.linkedin.com/in/pessinadaniele/", name: "mdi:linkedin", external: true },
+	{ friendlyName: "ORCID", link: "https://orcid.org/0009-0004-3107-6857", name: "mdi:identifier", external: true },
+];
+---
+
+<ul class="flex flex-wrap items-center gap-2" role="list">
+	{
+		socialLinks.map(({ friendlyName, link, name, external }) => (
+			<li class="flex">
+				<a
+					class="hover:border-link hover:text-link inline-flex items-center gap-x-1.5 rounded-sm border border-muted/40 px-2.5 py-1 text-xs font-semibold"
+					href={link}
+					rel={external ? "noreferrer" : undefined}
+					target={external ? "_blank" : undefined}
+				>
+					<Icon aria-hidden="true" class="h-4 w-4" focusable="false" name={name} />
+					{friendlyName}
+				</a>
+			</li>
+		))
+	}
+</ul>

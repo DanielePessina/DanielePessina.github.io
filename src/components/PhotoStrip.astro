@@ -1,0 +1,225 @@
+---
+import { Image, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { photoCaptions } from "@/data/photos";
+
+/**
+ * Drop photos into src/assets/photos/ and they show up here, sorted by filename.
+ * Name them 01-..., 02-... to control the order. Captions live in src/data/photos.ts.
+ */
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+	"../assets/photos/*.{jpg,jpeg,png,webp}",
+	{ eager: true },
+);
+
+const photos = await Promise.all(
+	Object.entries(modules)
+		.sort(([a], [b]) => a.localeCompare(b))
+		.map(async ([path, mod]) => {
+			const key = path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "";
+			const caption = photoCaptions[key];
+			// full-size copy of what is in src/assets/photos (no further downscaling), just re-encoded as WebP
+			const large = await getImage({ src: mod.default, width: mod.default.width, format: "webp", quality: 88 });
+			return {
+				key,
+				src: mod.default,
+				large: large.src,
+				location: caption?.location ?? "",
+				date: caption?.date ?? "",
+				alt: caption ? `${caption.location}, ${caption.date}` : key,
+			};
+		}),
+);
+---
+
+{
+	photos.length > 0 && (
+		<photo-strip class="relative block">
+			<ul
+				class="scrollbar-none -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 sm:-mx-8 sm:px-8"
+				role="list"
+			>
+				{photos.map((p, i) => (
+					<li class="shrink-0 snap-start">
+						<button
+							aria-label={`Open photo: ${p.alt}`}
+							class="block cursor-zoom-in rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+							data-index={i}
+							type="button"
+						>
+							<Image
+								alt={p.alt}
+								class="h-48 w-auto rounded-sm object-cover sm:h-56"
+								height={448}
+								loading="lazy"
+								src={p.src}
+								widths={[480, 720, 960]}
+							/>
+						</button>
+					</li>
+				))}
+			</ul>
+			{photos.length > 2 && (
+				<div class="mt-2 flex items-center gap-2">
+					<button
+						aria-label="Previous photos"
+						class="hover:border-link hover:text-link rounded-sm border border-muted/40 px-2 py-0.5 text-xs"
+						data-dir="-1"
+						type="button"
+					>
+						←
+					</button>
+					<button
+						aria-label="Next photos"
+						class="hover:border-link hover:text-link rounded-sm border border-muted/40 px-2 py-0.5 text-xs"
+						data-dir="1"
+						type="button"
+					>
+						→
+					</button>
+					<span class="text-muted text-xs">{photos.length} photos · click one to enlarge</span>
+				</div>
+			)}
+
+			<dialog
+				aria-label="Photo viewer"
+				class="m-auto max-h-none max-w-none bg-transparent p-0 text-global-text backdrop:bg-black/85 backdrop:backdrop-blur-sm"
+				id="photo-dialog"
+			>
+				<div class="flex h-dvh w-dvw flex-col items-center justify-center p-4 sm:p-10">
+					<figure class="flex max-h-full max-w-full flex-col gap-3">
+						<img
+							alt=""
+							class="max-h-[calc(100dvh-7rem)] max-w-full rounded-sm object-contain shadow-2xl"
+							data-role="large"
+							decoding="async"
+							src=""
+						/>
+						<figcaption class="flex items-end justify-between gap-4 text-xs text-gray-200">
+							<span>
+								<span class="font-semibold text-white" data-role="location" />
+								<span class="text-gray-400" data-role="date" />
+							</span>
+							<span class="text-gray-400" data-role="counter" />
+						</figcaption>
+					</figure>
+				</div>
+				<button
+					aria-label="Close"
+					class="absolute top-3 right-4 rounded-sm px-2 py-1 text-2xl leading-none text-gray-300 hover:text-white"
+					data-action="close"
+					type="button"
+				>
+					×
+				</button>
+				<button
+					aria-label="Previous photo"
+					class="absolute top-1/2 left-2 -translate-y-1/2 rounded-sm px-3 py-2 text-3xl text-gray-300 hover:text-white"
+					data-action="prev"
+					type="button"
+				>
+					‹
+				</button>
+				<button
+					aria-label="Next photo"
+					class="absolute top-1/2 right-2 -translate-y-1/2 rounded-sm px-3 py-2 text-3xl text-gray-300 hover:text-white"
+					data-action="next"
+					type="button"
+				>
+					›
+				</button>
+			</dialog>
+
+			<script
+				is:inline
+				set:html={JSON.stringify(
+					photos.map((p) => ({ src: p.large, location: p.location, date: p.date, alt: p.alt })),
+				)}
+				type="application/json"
+				data-photos
+			/>
+		</photo-strip>
+	)
+}
+
+<style>
+	.scrollbar-none {
+		scrollbar-width: none;
+	}
+	.scrollbar-none::-webkit-scrollbar {
+		display: none;
+	}
+	dialog[open] {
+		display: block;
+	}
+</style>
+
+<script>
+	type PhotoEntry = { src: string; location: string; date: string; alt: string };
+
+	class PhotoStrip extends HTMLElement {
+		#photos: PhotoEntry[] = [];
+		#index = 0;
+
+		connectedCallback() {
+			const track = this.querySelector<HTMLUListElement>("ul");
+			const dialog = this.querySelector<HTMLDialogElement>("dialog");
+			const data = this.querySelector<HTMLScriptElement>("script[data-photos]");
+			if (!track || !dialog || !data) return;
+			this.#photos = JSON.parse(data.textContent ?? "[]");
+
+			for (const btn of this.querySelectorAll<HTMLButtonElement>("button[data-dir]")) {
+				btn.addEventListener("click", () => {
+					track.scrollBy({ left: Number(btn.dataset.dir) * track.clientWidth * 0.8, behavior: "smooth" });
+				});
+			}
+
+			for (const btn of this.querySelectorAll<HTMLButtonElement>("button[data-index]")) {
+				btn.addEventListener("click", () => this.#open(Number(btn.dataset.index)));
+			}
+
+			dialog.querySelector("[data-action=close]")?.addEventListener("click", () => dialog.close());
+			dialog.querySelector("[data-action=prev]")?.addEventListener("click", () => this.#step(-1));
+			dialog.querySelector("[data-action=next]")?.addEventListener("click", () => this.#step(1));
+			// click on the dark backdrop (outside the figure) closes
+			dialog.addEventListener("click", (e) => {
+				const t = e.target as HTMLElement;
+				if (t === dialog || t.closest("figure") === null && !t.closest("button")) dialog.close();
+			});
+			dialog.addEventListener("keydown", (e) => {
+				if (e.key === "ArrowRight") this.#step(1);
+				if (e.key === "ArrowLeft") this.#step(-1);
+			});
+		}
+
+		#open(i: number) {
+			this.#index = i;
+			this.#render();
+			this.querySelector<HTMLDialogElement>("dialog")?.showModal();
+		}
+
+		#step(dir: number) {
+			const n = this.#photos.length;
+			this.#index = (this.#index + dir + n) % n;
+			this.#render();
+		}
+
+		#render() {
+			const p = this.#photos[this.#index];
+			if (!p) return;
+			const q = <T extends Element>(sel: string) => this.querySelector<T>(`dialog ${sel}`);
+			const img = q<HTMLImageElement>("[data-role=large]");
+			if (img) {
+				img.src = p.src;
+				img.alt = p.alt;
+			}
+			const loc = q<HTMLElement>("[data-role=location]");
+			const date = q<HTMLElement>("[data-role=date]");
+			const counter = q<HTMLElement>("[data-role=counter]");
+			if (loc) loc.textContent = p.location;
+			if (date) date.textContent = p.location && p.date ? ` · ${p.date}` : p.date;
+			if (counter) counter.textContent = `${this.#index + 1} / ${this.#photos.length}`;
+		}
+	}
+	customElements.define("photo-strip", PhotoStrip);
+</script>

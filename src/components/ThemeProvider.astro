@@ -1,0 +1,9 @@
+{/* Follows the browser / OS colour scheme. Inlined to avoid a flash of the wrong theme. */}
+<script is:inline>
+	const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+	const apply = () => document.documentElement.setAttribute("data-theme", darkPref.matches ? "dark" : "light");
+	apply();
+	darkPref.addEventListener("change", apply);
+	// forget any preference saved by the old toggle
+	try { localStorage.removeItem("theme"); } catch {}
+</script>
