@@ -206,12 +206,35 @@ const publications = [
 
 	<section class="mt-16" id="open-source">
 		<h2 class="title mb-6 text-xl">Open source</h2>
-		<p class="card">
-			<a class="cactus-link font-semibold" href="https://danielepessina.github.io/jaxgsa/">jaxgsa</a>
-			<span class="text-muted"> · </span>
-			JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
-			hundreds of times faster than SALib on multi-output workloads.
-		</p>
+		<div class="space-y-3">
+			<p class="card">
+				<a class="cactus-link font-semibold" href="https://danielepessina.github.io/jaxgsa/">jaxgsa</a>
+				<span class="text-muted"> · </span>
+				JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
+				hundreds of times faster than SALib on multi-output workloads. Try selected jaxgsa methods directly in
+				your browser with the{" "}
+				<a class="cactus-link" href="https://danielepessina.github.io/jaxgsa/workbench/">WebAssembly demo</a>.
+			</p>
+			<p class="card">
+				<a class="cactus-link font-semibold" href="https://github.com/DanielePessina/jax-hybridmodels">
+					jaxhybridmodels
+				</a>
+				<span class="text-muted"> · </span>
+				JAX/Equinox library for combining user-written ODE dynamics with trainable predictors, supporting bounded
+				physical quantities and regular or irregular time-series experiments. <a
+					class="cactus-link"
+					href="https://danielepessina.github.io/jax-hybridmodels/"
+				>
+					Documentation
+				</a>
+			</p>
+			<p class="card">
+				<a class="cactus-link font-semibold" href="https://github.com/DanielePessina/CriSTool.jl">CriSTool.jl</a>
+				<span class="text-muted"> · </span>
+				Julia package for simulating batch crystallisation, fitting kinetic parameters, and propagating parameter
+				uncertainty through population-balance models.
+			</p>
+		</div>
 	</section>
 
 	<section class="mt-16" id="publications">
