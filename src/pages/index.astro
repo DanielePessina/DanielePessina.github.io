@@ -10,8 +10,10 @@ const experience = [
 		where: "Cell Sims team · ARPA-H CATALYST · PREDICTS consortium",
 		when: "2026 – now",
 		points: [
-			"Differentiable pipelines that predict patient-level drug toxicity from mechanistic physiology plus ML layers.",
-			"Turning legacy scientific solvers (ODE engines, SBML, optimisers, agent-based models) into trainable PyTorch components.",
+			"Built a framework combining mechanistic simulations and machine learning, enabling patient-level toxicity models to train across multiple simulation engines.",
+			"Made previously non-differentiable scientific models trainable and accelerated model training by approximately 15× through gradient methods, precomputation and surrogates.",
+			"Developed virtual-cohort and uncertainty methods for patient-level modelling from aggregate clinical-trial summaries when individual patient records are unavailable.",
+			"Applied bifurcation analysis to large biological models to identify stability boundaries and treatment-response transitions.",
 		],
 	},
 	{
@@ -117,43 +119,42 @@ const publications = [
 			<p class="mb-1">
 				Modeling &amp; Optimization Scientist <span class="text-accent">· Deep Origin</span>
 			</p>
-			<p class="text-muted mb-5 text-xs">
-				Full-stack ML &amp; differentiable simulation · mechanistic + ML orchestration · virtual patients
-			</p>
+			<p class="text-muted mb-5 text-xs">Scientific machine learning · mechanistic modelling · uncertainty</p>
 			<SocialList />
 		</div>
 	</section>
 
-	<section class="mt-12">
+	<section class="mt-10">
 		<p>
-			I build modelling software for virtual patients and toxicology prediction. Mechanistic simulators,
-			machine learning and biological data, wired into one differentiable system that trains end to end
-			and runs in production.
+			I build scientific machine learning tools for complex biological systems. At Deep Origin, I connect
+			mechanistic simulations with trainable models to study patient-level toxicity. My PhD at Imperial
+			focuses on uncertainty-aware modelling and experimental design.
 		</p>
+		<nav aria-label="Explore this page" class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+			<span class="text-muted">Explore</span>
+			<a class="cactus-link" href="#now">Current work</a>
+			<a class="cactus-link" href="#experience">Experience</a>
+			<a class="cactus-link" href="#open-source">Open source</a>
+			<a class="cactus-link" href="#publications">Publications</a>
+		</nav>
 	</section>
 
-	<section class="mt-16" id="now">
-		<h2 class="title mb-6 text-xl">Now</h2>
+	<section class="mt-14" id="now">
+		<h2 class="title mb-6 text-xl">Current work</h2>
 		<div class="card border-l-4 border-l-accent">
 		<h3 class="font-semibold">Virtual patients &amp; in-silico clinical trials</h3>
 		<p class="text-muted mb-3 text-xs">Cell Sims team · ARPA-H CATALYST program · PREDICTS consortium · Deep Origin</p>
 		<p class="mb-3">
-			I build the software behind virtual patients: multiscale models of human physiology coupled to ML
-			layers, calibrated against heterogeneous data and exposed as workflows scientists can query.
+			I’m building tools that connect different kinds of biological simulators with machine learning. The
+			aim is to train patient-level toxicity models, examine how uncertain their predictions are, and make
+			use of clinical evidence even when only aggregate trial results are available.
 		</p>
-		<p>
-			Much of it is making legacy scientific code behave like modern ML code. I wrap C++ ODE engines,
-			SBML models, optimisation solvers and agent-based simulations as differentiable PyTorch components,
-			then build the gradient backends, surrogates and analysis tools around them. Once a model trains
-			end to end, it can be stress-tested under uncertainty and reduced to the mechanisms that drive the
-			output, which makes it usable for experiment design and in-silico decisions.
-		</p>
+		<ul class="list-disc space-y-2 ps-4 marker:text-muted" role="list">
+			<li><strong>Trainable simulations:</strong> Made mechanistic models work together with ML predictors, including solvers that do not provide ordinary gradients.</li>
+			<li><strong>Evidence from limited data:</strong> Developed virtual-cohort and uncertainty methods for modelling from aggregate trial summaries.</li>
+			<li><strong>Understanding model behaviour:</strong> Used bifurcation analysis to find stability boundaries and changes in biological response.</li>
+		</ul>
 		</div>
-	</section>
-
-	<section class="mt-16" id="photos">
-		<h2 class="title mb-6 text-xl">I also take photos</h2>
-		<PhotoStrip />
 	</section>
 
 	<section class="mt-16" id="experience">
@@ -255,6 +256,11 @@ const publications = [
 				))
 			}
 		</ul>
+	</section>
+
+	<section class="mt-16" id="photos">
+		<h2 class="title mb-6 text-xl">I also take photos</h2>
+		<PhotoStrip />
 	</section>
 
 	<section class="mt-16" id="contact">
