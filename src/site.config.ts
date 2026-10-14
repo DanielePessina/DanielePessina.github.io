@@ -35,6 +35,7 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: { path: string; title: string }[] = [
 	{ path: "/#now", title: "Now" },
 	{ path: "/#experience", title: "Experience" },
+	{ path: "/#open-source", title: "Open source" },
 	{ path: "/#publications", title: "Publications" },
 	{ path: "/#contact", title: "Contact" },
 ];

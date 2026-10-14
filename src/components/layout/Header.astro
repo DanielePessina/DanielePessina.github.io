@@ -38,7 +38,13 @@ import { siteConfig } from "../../site.config";
 					</svg>
 				)
 			}
-			<span class="text-accent-2 text-xl font-bold sm:text-2xl">{siteConfig.title}</span>
+			<span
+				class:list={[
+					"text-accent-2 text-xl font-bold sm:text-2xl",
+					// the homepage hero already shows the name as its h1
+					Astro.url.pathname === "/" && "sr-only",
+				]}>{siteConfig.title}</span
+			>
 		</a>
 		<nav
 			aria-label="Main"

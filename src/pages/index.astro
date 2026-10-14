@@ -53,6 +53,13 @@ const education = [
 
 const publications = [
 	{
+		title: "Amortised Global Sensitivity Analysis of Pharmacokinetic Models for Simulated Clinical Trials",
+		authors: "Pessina D.; Abbiati R. A.; Papathanasiou M. M.",
+		venue: "arXiv preprint",
+		year: "2026",
+		url: "https://arxiv.org/abs/2610.14719",
+	},
+	{
 		title: "Transfer Learning of Data-driven Crystallisation Processes via Constrained Neural Ordinary Differential Equations",
 		authors: "Pessina D.; Tian T.; Watson O.; Heng J. Y. Y.; Papathanasiou M. M.",
 		venue: "Digital Chemical Engineering",
@@ -103,67 +110,61 @@ const publications = [
 		url: "https://doi.org/10.1038/s41467-023-44396-4",
 	},
 ];
+
+const pubYears = [...new Set(publications.map((p) => p.year))];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section class="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
+	<section class="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-10">
 		<img
 			alt="Daniele Pessina"
-			class="h-32 w-26 shrink-0 rounded-sm object-cover"
-			height="128"
+			class="h-40 w-32 shrink-0 rounded-sm object-cover"
+			height="160"
 			src="/profile.jpeg"
-			width="104"
+			width="128"
 		/>
 		<div class="min-w-0">
-			<h1 class="title mb-1">Daniele Pessina</h1>
+			<h1 class="title mb-1 text-3xl">Daniele Pessina</h1>
 			<p class="mb-1">
 				Modeling &amp; Optimization Scientist <span class="text-accent">· Deep Origin</span>
 			</p>
-			<p class="text-muted mb-5 text-xs">Scientific machine learning · mechanistic modelling · uncertainty</p>
+			<p class="text-muted mb-4 text-xs">Scientific machine learning · mechanistic modelling · uncertainty</p>
+			<p class="mb-5 max-w-prose">
+				I build scientific machine learning tools for complex biological systems. At Deep Origin, I connect
+				mechanistic simulations with trainable models to study patient-level toxicity. My PhD at Imperial
+				focuses on uncertainty-aware modelling and experimental design.
+			</p>
 			<SocialList />
+			<p class="mt-5 text-sm">
+				<span class="text-accent me-2 rounded-sm border border-accent px-1.5 py-px text-xs font-semibold">New</span>
+				<a class="cactus-link" href="https://arxiv.org/abs/2610.14719" rel="noreferrer" target="_blank">
+					Amortised global sensitivity analysis of PK models for simulated clinical trials
+				</a>
+				<span class="text-muted"> · preprint, Oct 2026</span>
+			</p>
 		</div>
-	</section>
-
-	<section class="mt-10">
-		<p>
-			I build scientific machine learning tools for complex biological systems. At Deep Origin, I connect
-			mechanistic simulations with trainable models to study patient-level toxicity. My PhD at Imperial
-			focuses on uncertainty-aware modelling and experimental design.
-		</p>
-		<nav aria-label="Explore this page" class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-			<span class="text-muted">Explore</span>
-			<a class="cactus-link" href="#now">Current work</a>
-			<a class="cactus-link" href="#experience">Experience</a>
-			<a class="cactus-link" href="#open-source">Open source</a>
-			<a class="cactus-link" href="#publications">Publications</a>
-		</nav>
 	</section>
 
 	<section class="mt-14" id="now">
-		<h2 class="title mb-6 text-xl">Current work</h2>
-		<div class="card border-l-4 border-l-accent">
-		<h3 class="font-semibold">Virtual patients &amp; in-silico clinical trials</h3>
-		<p class="text-muted mb-3 text-xs">Cell Sims team · ARPA-H CATALYST program · PREDICTS consortium · Deep Origin</p>
-		<p class="mb-3">
-			I’m building tools that connect different kinds of biological simulators with machine learning. The
-			aim is to train patient-level toxicity models, examine how uncertain their predictions are, and make
-			use of clinical evidence even when only aggregate trial results are available.
-		</p>
-		<ul class="list-disc space-y-2 ps-4 marker:text-muted" role="list">
-			<li><strong>Trainable simulations:</strong> Made mechanistic models work together with ML predictors, including solvers that do not provide ordinary gradients.</li>
-			<li><strong>Evidence from limited data:</strong> Developed virtual-cohort and uncertainty methods for modelling from aggregate trial summaries.</li>
-			<li><strong>Understanding model behaviour:</strong> Used bifurcation analysis to find stability boundaries and changes in biological response.</li>
-		</ul>
+		<h2 class="section-title"><span class="section-num">01</span>Current work</h2>
+		<div class="card max-w-3xl border-l-4 border-l-accent">
+			<h3 class="font-semibold">Virtual patients &amp; in-silico clinical trials</h3>
+			<p class="text-muted mb-3 text-xs">Cell Sims team · ARPA-H CATALYST program · PREDICTS consortium · Deep Origin</p>
+			<p class="max-w-prose">
+				I’m building tools that connect different kinds of biological simulators with machine learning. The
+				aim is to train patient-level toxicity models, examine how uncertain their predictions are, and make
+				use of clinical evidence even when only aggregate trial results are available.
+			</p>
 		</div>
 	</section>
 
-	<section class="mt-16" id="experience">
-		<h2 class="title mb-6 text-xl">Experience</h2>
-		<ul class="space-y-4" role="list">
+	<section class="mt-14" id="experience">
+		<h2 class="section-title"><span class="section-num">02</span>Experience</h2>
+		<ul class="divide-edge divide-y" role="list">
 			{
 				experience.map((job) => (
-					<li class="card grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
-						<span class="text-muted text-xs sm:pt-0.5">{job.when}</span>
+					<li class="grid gap-1 py-5 first:pt-0 sm:grid-cols-[8rem_1fr] sm:gap-x-6">
+						<span class="text-muted text-xs sm:pt-1">{job.when}</span>
 						<div>
 							<h3 class="font-semibold">
 								{job.role} <span class="text-accent">· {job.org}</span>
@@ -181,12 +182,12 @@ const publications = [
 		</ul>
 	</section>
 
-	<section class="mt-16" id="education">
-		<h2 class="title mb-6 text-xl">Education</h2>
+	<section class="mt-14" id="education">
+		<h2 class="section-title"><span class="section-num">03</span>Education</h2>
 		<ul class="space-y-3" role="list">
 			{
 				education.map((e) => (
-					<li class="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-x-4">
+					<li class="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-x-6">
 						<span class="text-muted text-xs sm:pt-0.5">{e.when}</span>
 						<div>
 							<span class="font-semibold">{e.degree}</span>
@@ -196,7 +197,7 @@ const publications = [
 				))
 			}
 		</ul>
-		<p class="mt-5">
+		<p class="mt-5 max-w-prose sm:ms-[calc(8rem+1.5rem)]">
 			Thesis: a hybrid in-silico / in-vitro approach to the design and optimisation of large-molecule
 			crystallisation, supervised by{" "}
 			<a class="cactus-link" href="https://www.papathanlab.com/">Maria Papathanasiou</a> and{" "}
@@ -205,67 +206,80 @@ const publications = [
 		</p>
 	</section>
 
-	<section class="mt-16" id="open-source">
-		<h2 class="title mb-6 text-xl">Open source</h2>
-		<div class="space-y-3">
-			<p class="card">
+	<section class="mt-14" id="open-source">
+		<h2 class="section-title"><span class="section-num">04</span>Open source</h2>
+		<div class="grid gap-6 md:grid-cols-3">
+			<div class="border-t-2 border-accent pt-3">
 				<a class="cactus-link font-semibold" href="https://danielepessina.github.io/jaxgsa/">jaxgsa</a>
-				<span class="text-muted"> · </span>
-				JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
-				hundreds of times faster than SALib on multi-output workloads. Try selected jaxgsa methods directly in
-				your browser with the{" "}
-				<a class="cactus-link" href="https://danielepessina.github.io/jaxgsa/workbench/">WebAssembly demo</a>.
-			</p>
-			<p class="card">
+				<p class="mt-1 text-sm">
+					JAX library for global sensitivity analysis of large dynamic models (Sobol, RS-HDMR, multi-output),
+					hundreds of times faster than SALib on multi-output workloads.
+				</p>
+				<p class="text-muted mt-2 text-xs">
+					<a class="cactus-link" href="https://danielepessina.github.io/jaxgsa/workbench/">WebAssembly demo</a> ·{" "}
+					<a class="cactus-link" href="https://arxiv.org/abs/2610.14719">Paper</a>
+				</p>
+			</div>
+			<div class="border-t-2 border-accent pt-3">
 				<a class="cactus-link font-semibold" href="https://github.com/DanielePessina/jax-hybridmodels">
 					jaxhybridmodels
 				</a>
-				<span class="text-muted"> · </span>
-				JAX/Equinox library for combining user-written ODE dynamics with trainable predictors, supporting bounded
-				physical quantities and regular or irregular time-series experiments. <a
-					class="cactus-link"
-					href="https://danielepessina.github.io/jax-hybridmodels/"
-				>
-					Documentation
-				</a>
-			</p>
-			<p class="card">
+				<p class="mt-1 text-sm">
+					JAX/Equinox library for combining user-written ODE dynamics with trainable predictors, supporting
+					bounded physical quantities and regular or irregular time-series experiments.
+				</p>
+				<p class="text-muted mt-2 text-xs">
+					<a class="cactus-link" href="https://danielepessina.github.io/jax-hybridmodels/">Documentation</a>
+				</p>
+			</div>
+			<div class="border-t-2 border-accent pt-3">
 				<a class="cactus-link font-semibold" href="https://github.com/DanielePessina/CriSTool.jl">CriSTool.jl</a>
-				<span class="text-muted"> · </span>
-				Julia package for simulating batch crystallisation, fitting kinetic parameters, and propagating parameter
-				uncertainty through population-balance models.
-			</p>
+				<p class="mt-1 text-sm">
+					Julia package for simulating batch crystallisation, fitting kinetic parameters, and propagating
+					parameter uncertainty through population-balance models.
+				</p>
+			</div>
 		</div>
 	</section>
 
-	<section class="mt-16" id="publications">
-		<h2 class="title mb-6 text-xl">Selected publications</h2>
-		<ul class="space-y-3" role="list">
+	<section class="mt-14" id="publications">
+		<h2 class="section-title"><span class="section-num">05</span>Selected publications</h2>
+		<div class="divide-edge divide-y">
 			{
-				publications.map((p) => (
-					<li class="card py-4">
-						<a class="cactus-link font-semibold" href={p.url} rel="noreferrer" target="_blank">
-							{p.title}
-						</a>
-						<p class="text-muted mt-0.5 text-xs">{p.authors}</p>
-						<p class="text-muted text-xs">
-							<i>{p.venue}</i> · <span class="text-accent font-semibold">{p.year}</span>
-							{p.badge && <span class="ms-2 rounded-sm border border-accent px-1.5 py-px text-accent">{p.badge}</span>}
-						</p>
-					</li>
+				pubYears.map((year) => (
+					<div class="grid gap-1 py-4 first:pt-0 sm:grid-cols-[8rem_1fr] sm:gap-x-6">
+						<span class="text-accent text-sm font-semibold">{year}</span>
+						<ul class="space-y-4" role="list">
+							{publications
+								.filter((p) => p.year === year)
+								.map((p) => (
+									<li>
+										<a class="cactus-link font-semibold" href={p.url} rel="noreferrer" target="_blank">
+											{p.title}
+										</a>
+										<p class="text-muted mt-0.5 text-xs">
+											{p.authors} · <i>{p.venue}</i>
+											{p.badge && (
+												<span class="ms-2 inline-block whitespace-nowrap rounded-sm border border-accent px-1.5 py-px text-accent">{p.badge}</span>
+											)}
+										</p>
+									</li>
+								))}
+						</ul>
+					</div>
 				))
 			}
-		</ul>
+		</div>
 	</section>
 
-	<section class="mt-16" id="photos">
-		<h2 class="title mb-6 text-xl">I also take photos</h2>
+	<section class="mt-14" id="photos">
+		<h2 class="section-title"><span class="section-num">06</span>I also take photos</h2>
 		<PhotoStrip />
 	</section>
 
-	<section class="mt-16" id="contact">
-		<h2 class="title mb-6 text-xl">Contact</h2>
-		<p class="mb-4">
+	<section class="mt-14" id="contact">
+		<h2 class="section-title"><span class="section-num">07</span>Contact</h2>
+		<p class="mb-4 max-w-prose">
 			Based in London. Happiest talking about differentiable simulation, hybrid modelling and making
 			scientific code trainable.
 		</p>
